@@ -26,3 +26,22 @@ json-server https://gist.githubusercontent.com/doggy8088/705839b27459fcbeefb54df
 * 取得所有標籤
 
     http://localhost:3000/tags
+# 如果今天新增了一個資料夾...
+## 到angular.json修改參數
+```
+"architect": {
+        "build": { //不要加到test去唷
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/demo2",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/api" //加入新增的資料夾
+            ],
+```
+## 存檔後重新npm start，讓程式重新編譯
