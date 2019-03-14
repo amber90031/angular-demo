@@ -1,0 +1,13 @@
+<div class="sidebar">
+  <p>Popular Tags</p>
+
+  <div class="tag-list">
+    <a
+      *ngFor="let item of (tags$ | async)"
+      href="#"
+      class="label label-pill label-default"
+      (click)="searchTags(item)"
+      >{{ item }}
+    </a>
+  </div>
+</div>

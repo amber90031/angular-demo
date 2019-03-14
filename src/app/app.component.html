@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<div class="home-page">
+  <div class="banner">
+    <div class="container">
+      <h1 class="logo-font">{{ title }}</h1>
+      <p innerHtml="{{ subtitle }}"></p>
+    </div>
+  </div>
+
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-9">
+        <app-articles
+          [articles]="articles$ | async | filterArticle: keyword:tag"
+        ></app-articles>
+      </div>
+      <div class="col-md-3">
+        <app-tags></app-tags>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

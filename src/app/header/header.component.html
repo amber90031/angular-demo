@@ -1,0 +1,35 @@
+<nav class="navbar navbar-light">
+  <div class="container">
+    <a
+      [ngClass]="{ 'navbar-brand': true, highlight: isHighlight }"
+      [ngStyle]="{ 'font-size': FontSize }"
+      href="index.html"
+      >conduit</a
+    >
+    <input
+      class="form-control form-control-sm search-input"
+      type="text"
+      placeholder="Keyword"
+      [(ngModel)]="keyword"
+      (input)="ckNeedFill(keyword)"
+    />&nbsp;
+    <button class="btn btn-sm btn-primary" (click)="showSearch(keyword)">
+      <i class="ion-search"></i></button
+    >&nbsp;
+    <button class="btn btn-sm btn-warning" (click)="setHighlight()">
+      <i class="ion-bookmark"></i></button
+    >&nbsp;
+    <button class="btn btn-sm btn-info" (click)="search(keyword)">
+      <i class="ion-search"></i>
+    </button>
+    &nbsp;
+    <button class="btn btn-sm btn" (click)="research()">
+      <i class="ion-close"></i>
+    </button>
+    <p *ngIf="NeedFill" style="color:red;font-size: 14px;font-weight: bold">
+      *Plese Enter the keyword.
+    </p>
+    <p>{{ keyword }}</p>
+    <P>{{ sKeyword }}</P>
+  </div>
+</nav>
